@@ -17,7 +17,7 @@ typedef struct node
 
 typedef struct heap
 {
-    node *elemento; //perceba que isso também mudou!!! também porque usaremos array
+    node *elementos; //perceba que isso também mudou!!! também porque usaremos array
     int tamanho; //tamanho total do array 
     int capacidade; //total capacidade do array 
 } heap; //nosso heap será especificamente um min heap, ou seja, prioriza o menor valor
@@ -33,7 +33,7 @@ heap* criarheap (int capacidade) //funçao que inicializa nosso heap a partir da
 
 
   //verifica se a fila esta vazia
-int eh_vazia(fila *fila) 
+int eh_vazia(heap *h) 
 {
     return h->tamanho == 0; //isso tbm mudou pela troca de encadeamento por array
 }
@@ -53,7 +53,7 @@ void trocar(node *a, node *b) //funcao crucial no heapfy!!!!! vamos usar ela mta
   int prioridade: valor da prioridade
   */
 
-int enqueue(heap *heap, int prioridade) //enfileirar COM HEAP ! recebemos a fila em si e a prioridade do elemento a ser enfileirado
+int enqueue(heap *h, int prioridade) //enfileirar COM HEAP ! recebemos a fila em si e a prioridade do elemento a ser enfileirado
 {
     int comparacoes = 0; //vms retornar isso dps
 
@@ -85,15 +85,17 @@ int enqueue(heap *heap, int prioridade) //enfileirar COM HEAP ! recebemos a fila
             break; 
         }
 
-        return comparacoes;
+        
     }
+    
+    return comparacoes;
 }
 
   /*função que remove o elemente e retorna a nova maior prioridade
   recebe como parametro o endereço do primeiro nó da fila, que será removido
   */
 
-int dequeue(heap *heap)
+int dequeue(heap *h)
 {
     if (eh_vazia(h)) //antes de tudo a gente ve se tem o que tirar
     {
