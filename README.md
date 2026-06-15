@@ -4,14 +4,10 @@
 > Instituto de Computação (IC) — Universidade Federal de Alagoas (UFAL)  
 > Professor: **Márcio Ribeiro**
 
----
-
-## 👥 Integrantes
-
 
 ---
 
-## 📌 Sobre o Projeto
+## Sobre o Projeto
 
 Este projeto implementa e compara duas abordagens para **fila de prioridade** em C:
 
@@ -22,21 +18,10 @@ O objetivo é evidenciar, de forma visual e quantitativa, a diferença de efici�
 
 ---
 
-## 📁 Estrutura dos Arquivos
-
-```
-.
-├── gerarentradas.c   # Código unificado: implementações + gerador do CSV
-├── resultados.csv    # Saída gerada pelo programa (comparações por tamanho)
-└── README.md
-```
-
----
-
-## ⚙️ Como Compilar e Executar
+## Como Compilar e Executar
 
 ### Pré-requisito
-Ter o GCC instalado. No Windows, recomenda-se o [WinLibs MinGW](https://github.com/brechtsanders/winlibs_mingw/releases/latest).
+Ter o GCC instalado.
 
 ### Compilar
 ```bash
@@ -56,7 +41,7 @@ O programa gera o arquivo `resultados.csv` na pasta atual, pronto para ser plota
 
 ---
 
-## 📊 Como Funciona
+## Como Funciona
 
 O programa testa filas de **1.000 a 10.000 elementos** (em passos de 1.000). Para cada tamanho:
 
@@ -76,7 +61,7 @@ Em ambas as implementações, **menor valor = maior prioridade** (min-heap / fil
 
 ---
 
-## 📈 Resultado
+## Resultado
 
 O gráfico abaixo foi gerado a partir do `resultados.csv` via MATLAB e ilustra claramente a diferença de crescimento entre as duas abordagens:
 
@@ -86,7 +71,7 @@ A curva vermelha (lista encadeada) cresce de forma quadrática em número de com
 
 ---
 
-## 🧠 Conceitos Envolvidos
+## Conceitos Envolvidos
 
 - **Min-Heap**: árvore binária completa onde o pai sempre tem valor menor ou igual aos filhos. Representada aqui como array, onde o pai do índice `i` está em `(i-1)/2` e os filhos em `2i+1` e `2i+2`.
 - **Heapify Up**: reposicionamento do elemento inserido subindo na árvore até restaurar a propriedade do heap.
